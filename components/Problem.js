@@ -39,32 +39,123 @@ const Step = ({ emoji, text }) => {
 // - Hero: "ShipFast helps developers launch startups fast"
 // - Problem Agitation: "Developers spend too much time adding features, get overwhelmed, and quit." (not about ShipFast at all)
 // - Features: "ShipFast has user auth, Stripe, emails all set up for you"
-const Problem = () => {
+export default function Problem() {
   return (
-    <section className="bg-neutral text-neutral-content">
-      <div className="max-w-7xl mx-auto px-8 py-16 md:py-32 text-center">
-        <h2 className="max-w-3xl mx-auto font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
-          80% of startups fail because founders never launch
-        </h2>
-        <p className="max-w-xl mx-auto text-lg opacity-90 leading-relaxed mb-12 md:mb-20">
-          Emails, DNS records, user authentication... There&apos;s so much going
-          on.
-        </p>
-
-        <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6">
-          <Step emoji="🧑‍💻" text="8 hrs to add Stripe" />
-
-          <Arrow extraStyle="max-md:-scale-x-100 md:-rotate-90" />
-
-          <Step emoji="😮‍💨" text="Struggle to find time" />
-
-          <Arrow extraStyle="md:-scale-x-100 md:-rotate-90" />
-
-          <Step emoji="😔" text="Quit project" />
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+              The Struggles of Modern Meal Planning
+            </h2>
+            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+              We've all been there...
+            </p>
+          </div>
+          <div className="mx-auto grid max-w-5xl gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
+              <div className="p-2 bg-primary/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 text-primary"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m15 9-6 6" />
+                  <path d="m9 9 6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold">Wasted Time</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Hours spent searching for recipes, planning meals, and making
+                shopping lists every week.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
+              <div className="p-2 bg-primary/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 text-primary"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m15 9-6 6" />
+                  <path d="m9 9 6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold">Food Waste</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Buying ingredients that go unused and end up in the trash,
+                costing you money and harming the environment.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
+              <div className="p-2 bg-primary/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 text-primary"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m15 9-6 6" />
+                  <path d="m9 9 6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold">Cooking Fatigue</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                The same boring recipes week after week, making cooking feel
+                like a chore rather than a joy.
+              </p>
+            </div>
+            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg md:col-span-2 lg:col-span-1">
+              <div className="p-2 bg-primary/10 rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-6 w-6 text-primary"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m15 9-6 6" />
+                  <path d="m9 9 6 6" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold">Dietary Complications</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Struggling to find recipes that match your dietary restrictions
+                or health goals while still tasting great.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Problem;
+}

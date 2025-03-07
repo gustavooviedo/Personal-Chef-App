@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 // The features array is a list of features that will be displayed in the accordion.
@@ -12,137 +12,119 @@ import Image from "next/image";
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "Emails",
+    title: "Personalized Recipe Recommendations",
     description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
-    type: "video",
-    path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
-    format: "video/webm",
-    svg: (
+      "Our AI analyzes your dietary preferences, restrictions, and favorite cuisines to suggest recipes that perfectly match your needs. Whether you're gluten-free, vegan, or following a specific diet plan, we've got you covered.",
+    icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        fill="none"
         stroke="currentColor"
-        className="w-6 h-6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
       >
-        <path
-          strokeLinecap="round"
-          d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"
-        />
+        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+        <line x1="6" x2="18" y1="17" y2="17" />
       </svg>
     ),
   },
   {
-    title: "Payments",
+    title: "Smart Grocery Lists",
     description:
-      "Create checkout sessions, handle webhooks to update user's account (subscriptions, one-time payments...) and tips to setup your account & reduce chargebacks",
-    type: "image",
-    path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
-    alt: "A computer",
-    svg: (
+      "Automatically generate comprehensive grocery lists based on your selected recipes. Our intelligent system combines ingredients across recipes, suggests optimized quantities, and lets you check items off as you shop.",
+    icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        fill="none"
         stroke="currentColor"
-        className="w-6 h-6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
-        />
+        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+        <path d="M3 6h18" />
+        <path d="M16 10a4 4 0 0 1-8 0" />
       </svg>
     ),
   },
   {
-    title: "Authentication",
+    title: "Waste Reduction Planning",
     description:
-      "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
-    svg: (
+      "Our AI creates meal plans that cleverly use ingredients across multiple recipes, minimizing leftovers and reducing food waste. Save money and help the environment by buying only what you'll actually use.",
+    icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        fill="none"
         stroke="currentColor"
-        className="w-6 h-6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
-        />
+        <path d="M12 3v19" />
+        <path d="M5 8h14" />
+        <path d="M15 5h-3v3h-3v3h3v3h3v-3h3V8h-3z" />
       </svg>
     ),
   },
   {
-    title: "Style",
+    title: "Budget-Friendly Options",
     description:
-      "Components, animations & sections (like this features section), 20+ themes with daisyUI, automatic dark mode",
-    svg: (
+      "Set your grocery budget and let our AI suggest recipes that maximize flavor while minimizing cost. Track your spending and see how much you're saving compared to your previous grocery habits.",
+    icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        fill="none"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
-        strokeWidth={1.5}
+        fill="none"
         stroke="currentColor"
-        className="w-6 h-6"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
-        />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M16 8h-6.5a2.5 2.5 0 0 0 0 5h3a2.5 2.5 0 0 1 0 5H6" />
+        <path d="M12 18v2" />
+        <path d="M12 4v2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Culinary Inspiration",
+    description:
+      "Never get stuck in a recipe rut again. Our AI suggests new recipes to try based on your taste profile, helping you explore new cuisines and cooking techniques. Make cooking exciting again!",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
       </svg>
     ),
   },
 ];
-
-// An SEO-friendly accordion component including the title and a description (when clicked.)
-const Item = ({ feature, isOpen, setFeatureSelected }) => {
-  const accordion = useRef(null);
-  const { title, description, svg } = feature;
-
-  return (
-    <li>
-      <button
-        className="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg"
-        onClick={(e) => {
-          e.preventDefault();
-          setFeatureSelected();
-        }}
-        aria-expanded={isOpen}
-      >
-        <span className={`duration-100 ${isOpen ? "text-primary" : ""}`}>
-          {svg}
-        </span>
-        <span
-          className={`flex-1 text-base-content ${
-            isOpen ? "text-primary font-semibold" : ""
-          }`}
-        >
-          <h3 className="inline">{title}</h3>
-        </span>
-      </button>
-
-      <div
-        ref={accordion}
-        className={`transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden`}
-        style={
-          isOpen
-            ? { maxHeight: accordion?.current?.scrollHeight, opacity: 1 }
-            : { maxHeight: 0, opacity: 0 }
-        }
-      >
-        <div className="pb-5 leading-relaxed">{description}</div>
-      </div>
-    </li>
-  );
-};
 
 // A component to display the media (video or image) of the feature. If the type is not specified, it will display an empty div.
 // Video are set to autoplay for best UX.
@@ -180,14 +162,18 @@ const Media = ({ feature }) => {
       />
     );
   } else {
-    return <div className={`${style} !border-none`}></div>;
+    return <div className={`${style} !border-0`}></div>;
   }
 };
 
 // A component to display 2 to 5 features in an accordion.
 // By default, the first feature is selected. When a feature is clicked, the others are closed.
 const FeaturesAccordion = () => {
-  const [featureSelected, setFeatureSelected] = useState(0);
+  const [openItem, setOpenItem] = useState(0);
+
+  const toggleItem = (index) => {
+    setOpenItem(openItem === index ? null : index);
+  };
 
   return (
     <section
@@ -196,26 +182,64 @@ const FeaturesAccordion = () => {
     >
       <div className="px-8">
         <h2 className="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24">
-          All you need to ship your startup fast
+          All you need to cook smarter
           <span className="bg-neutral text-neutral-content px-2 md:px-4 ml-1 md:ml-1.5 leading-relaxed whitespace-nowrap">
-            and get profitable
+            and eat better
           </span>
         </h2>
         <div className=" flex flex-col md:flex-row gap-12 md:gap-24">
           <div className="grid grid-cols-1 items-stretch gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-20">
             <ul className="w-full">
-              {features.map((feature, i) => (
-                <Item
-                  key={feature.title}
-                  index={i}
-                  feature={feature}
-                  isOpen={featureSelected === i}
-                  setFeatureSelected={() => setFeatureSelected(i)}
-                />
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white shadow-sm dark:bg-gray-950"
+                >
+                  <button
+                    onClick={() => toggleItem(index)}
+                    className="flex w-full items-center justify-between p-4 text-left"
+                    aria-expanded={openItem === index}
+                    aria-controls={`accordion-${index}`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                        {feature.icon}
+                      </div>
+                      <h3 className="font-semibold">{feature.title}</h3>
+                    </div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`h-4 w-4 transition-all ${
+                        openItem === index ? "rotate-180" : ""
+                      }`}
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+                  <div
+                    id={`accordion-${index}`}
+                    className={`overflow-hidden transition-all ${
+                      openItem === index ? "max-h-96" : "max-h-0"
+                    }`}
+                    aria-hidden={openItem !== index}
+                  >
+                    <div className="p-4 pt-0 text-sm text-gray-500 dark:text-gray-400">
+                      {feature.description}
+                    </div>
+                  </div>
+                </div>
               ))}
             </ul>
 
-            <Media feature={features[featureSelected]} key={featureSelected} />
+            <Media feature={features[openItem]} key={openItem} />
           </div>
         </div>
       </div>

@@ -2,9 +2,136 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  scroll-behavior: smooth !important;
+:root {
+  /* Main brand colors */
+  --primary: 142, 70%, 35%; /* A fresh green for food/cooking */
+  --primary-foreground: 0, 0%, 100%;
+
+  /* Accent and neutral colors */
+  --accent: 28, 100%, 55%; /* Warm orange accent */
+  --accent-foreground: 0, 0%, 100%;
+  --secondary: 168, 63%, 43%; /* Teal secondary */
+  --secondary-foreground: 0, 0%, 100%;
+
+  /* UI colors */
+  --background: 0, 0%, 100%;
+  --foreground: 240, 10%, 3.9%;
+  --card: 0, 0%, 100%;
+  --card-foreground: 240, 10%, 3.9%;
+  --popover: 0, 0%, 100%;
+  --popover-foreground: 240, 10%, 3.9%;
+  --muted: 240, 4.8%, 95.9%;
+  --muted-foreground: 240, 3.8%, 46.1%;
+  --border: 240, 5.9%, 90%;
+  --input: 240, 5.9%, 90%;
+  --ring: 142, 70%, 35%;
+
+  /* Status colors */
+  --destructive: 0, 84.2%, 60.2%;
+  --destructive-foreground: 0, 0%, 98%;
+
+  /* UI dimensions */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 240, 10%, 3.9%;
+  --foreground: 0, 0%, 98%;
+  --card: 240, 10%, 3.9%;
+  --card-foreground: 0, 0%, 98%;
+  --popover: 240, 10%, 3.9%;
+  --popover-foreground: 0, 0%, 98%;
+  --primary: 142, 70%, 45%;
+  --primary-foreground: 240, 5.9%, 10%;
+  --secondary: 168, 76%, 43%;
+  --secondary-foreground: 0, 0%, 98%;
+  --muted: 240, 3.7%, 15.9%;
+  --muted-foreground: 240, 5%, 64.9%;
+  --accent: 28, 100%, 55%;
+  --accent-foreground: 240, 5.9%, 10%;
+  --destructive: 0, 62.8%, 30.6%;
+  --destructive-foreground: 0, 0%, 98%;
+  --border: 240, 3.7%, 15.9%;
+  --input: 240, 3.7%, 15.9%;
+  --ring: 142, 70%, 35%;
+}
+
+@layer base {
+  * {
+    @apply border-neutral-200 dark:border-neutral-800;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Custom styles for food-related elements */
+.recipe-card {
+  @apply transition-all duration-300 hover:shadow-lg border rounded-lg overflow-hidden;
+}
+
+.ingredient-list li {
+  @apply flex items-center gap-2 py-1;
+}
+
+.ingredient-list li::before {
+  content: "•";
+  @apply text-primary font-bold;
+}
+
+/* Food imagery background styles */
+.food-pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f9f4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
+}
+
+.btn-accent {
+  @apply bg-accent text-accent-foreground hover:bg-accent/90;
+}
+
+/* Custom animations for food elements */
+@keyframes simmer {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.simmer {
+  animation: simmer 2s infinite ease-in-out;
+}
+
+/* Hero image overlay */
+.hero-image-overlay {
+  @apply relative;
+}
+
+.hero-image-overlay::after {
+  content: "";
+  @apply absolute inset-0 bg-primary/10 z-10;
 }
 
 /* It makes the HTML progress bar filling smooth when value change. */
@@ -12,11 +139,11 @@ progress::-webkit-progress-value {
   transition: 0.6s width ease-out;
 }
 
-@layer base {
+@layer components {
   .btn-gradient {
-    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
+    @apply bg-gradient-to-r from-primary to-secondary hover:saturate-[1.2] shadow duration-100 border-0 text-white;
   }
   .btn {
-    @apply !capitalize;
+    @apply capitalize;
   }
 }
