@@ -3,28 +3,35 @@
 @tailwind utilities;
 
 :root {
-  /* Main brand colors */
-  --primary: 142, 70%, 35%; /* A fresh green for food/cooking */
+  /* Warm and Inviting (Terracotta-inspired) Palette */
+  --color-primary: #e2725b; /* Terracotta */
+  --color-ivory: #fdf5e6; /* Ivory */
+  --color-warm-gray: #a39a92; /* Warm Gray */
+  --color-olive-green: #738678; /* Olive Green */
+  --color-soft-cream: #f7e7ce; /* Soft Cream */
+
+  /* CSS variables for the Tailwind theme */
+  --primary: 14, 70%, 62%; /* Terracotta */
   --primary-foreground: 0, 0%, 100%;
 
-  /* Accent and neutral colors */
-  --accent: 28, 100%, 55%; /* Warm orange accent */
-  --accent-foreground: 0, 0%, 100%;
-  --secondary: 168, 63%, 43%; /* Teal secondary */
+  /* Accent and secondary colors */
+  --accent: 37, 40%, 88%; /* Soft Cream */
+  --accent-foreground: 14, 70%, 42%;
+  --secondary: 144, 10%, 49%; /* Olive Green */
   --secondary-foreground: 0, 0%, 100%;
 
   /* UI colors */
-  --background: 0, 0%, 100%;
-  --foreground: 240, 10%, 3.9%;
-  --card: 0, 0%, 100%;
-  --card-foreground: 240, 10%, 3.9%;
-  --popover: 0, 0%, 100%;
-  --popover-foreground: 240, 10%, 3.9%;
-  --muted: 240, 4.8%, 95.9%;
-  --muted-foreground: 240, 3.8%, 46.1%;
-  --border: 240, 5.9%, 90%;
-  --input: 240, 5.9%, 90%;
-  --ring: 142, 70%, 35%;
+  --background: 40, 70%, 98%; /* Light ivory background */
+  --foreground: 25, 10%, 30%; /* Warm Gray text */
+  --card: 40, 100%, 98%;
+  --card-foreground: 25, 10%, 30%;
+  --popover: 40, 100%, 98%;
+  --popover-foreground: 25, 10%, 30%;
+  --muted: 37, 40%, 94%;
+  --muted-foreground: 25, 10%, 50%;
+  --border: 37, 40%, 90%;
+  --input: 37, 40%, 90%;
+  --ring: 14, 70%, 62%;
 
   /* Status colors */
   --destructive: 0, 84.2%, 60.2%;
@@ -35,25 +42,25 @@
 }
 
 .dark {
-  --background: 240, 10%, 3.9%;
-  --foreground: 0, 0%, 98%;
-  --card: 240, 10%, 3.9%;
-  --card-foreground: 0, 0%, 98%;
-  --popover: 240, 10%, 3.9%;
-  --popover-foreground: 0, 0%, 98%;
-  --primary: 142, 70%, 45%;
-  --primary-foreground: 240, 5.9%, 10%;
-  --secondary: 168, 76%, 43%;
-  --secondary-foreground: 0, 0%, 98%;
-  --muted: 240, 3.7%, 15.9%;
-  --muted-foreground: 240, 5%, 64.9%;
-  --accent: 28, 100%, 55%;
-  --accent-foreground: 240, 5.9%, 10%;
+  --background: 25, 20%, 15%;
+  --foreground: 40, 40%, 90%;
+  --card: 25, 20%, 20%;
+  --card-foreground: 40, 40%, 90%;
+  --popover: 25, 20%, 20%;
+  --popover-foreground: 40, 40%, 90%;
+  --primary: 14, 70%, 62%;
+  --primary-foreground: 40, 40%, 97%;
+  --secondary: 144, 15%, 49%;
+  --secondary-foreground: 40, 40%, 97%;
+  --muted: 25, 20%, 25%;
+  --muted-foreground: 40, 30%, 75%;
+  --accent: 37, 30%, 40%;
+  --accent-foreground: 40, 40%, 97%;
   --destructive: 0, 62.8%, 30.6%;
   --destructive-foreground: 0, 0%, 98%;
-  --border: 240, 3.7%, 15.9%;
-  --input: 240, 3.7%, 15.9%;
-  --ring: 142, 70%, 35%;
+  --border: 25, 20%, 25%;
+  --input: 25, 20%, 25%;
+  --ring: 14, 70%, 55%;
 }
 
 @layer base {
@@ -63,6 +70,7 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23F7E7CE' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E");
   }
 
   h1,
@@ -71,74 +79,143 @@
   h4,
   h5,
   h6 {
-    @apply font-medium tracking-tight;
+    @apply font-medium tracking-tight text-foreground;
+  }
+
+  h1,
+  h2 {
+    @apply font-serif;
   }
 }
 
-/* Custom styles for food-related elements */
-.recipe-card {
-  @apply transition-all duration-300 hover:shadow-lg border rounded-lg overflow-hidden;
+/* Terracotta color palette utility classes */
+.terracotta-text {
+  color: var(--color-primary);
+}
+.ivory-text {
+  color: var(--color-ivory);
+}
+.warm-gray-text {
+  color: var(--color-warm-gray);
+}
+.olive-text {
+  color: var(--color-olive-green);
+}
+.soft-cream-text {
+  color: var(--color-soft-cream);
 }
 
-.ingredient-list li {
-  @apply flex items-center gap-2 py-1;
+.terracotta-bg {
+  background-color: var(--color-primary);
 }
-
-.ingredient-list li::before {
-  content: "•";
-  @apply text-primary font-bold;
+.ivory-bg {
+  background-color: var(--color-ivory);
 }
-
-/* Food imagery background styles */
-.food-pattern-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f9f4' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.warm-gray-bg {
+  background-color: var(--color-warm-gray);
+}
+.olive-bg {
+  background-color: var(--color-olive-green);
+}
+.soft-cream-bg {
+  background-color: var(--color-soft-cream);
 }
 
 /* Custom button styles */
-.btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90;
+.btn-terracotta {
+  background-color: var(--color-primary);
+  color: white;
+}
+.btn-terracotta:hover {
+  background-color: #c96450;
+}
+.btn-olive {
+  background-color: var(--color-olive-green);
+  color: white;
+  border: 1px solid var(--color-olive-green);
+}
+.btn-olive:hover {
+  background-color: #667a6a;
+}
+.btn-outline {
+  border: 1px solid var(--color-warm-gray);
+  background-color: transparent;
+  color: var(--color-warm-gray);
+}
+.btn-outline:hover {
+  background-color: var(--color-soft-cream);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
-.btn-secondary {
-  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
+/* Card styles */
+.wellness-card {
+  background-color: var(--color-ivory);
+  border-color: var(--color-warm-gray);
+  transition: all 0.3s ease;
+}
+.wellness-card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.btn-accent {
-  @apply bg-accent text-accent-foreground hover:bg-accent/90;
+/* Spice pattern background */
+.spice-pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E2725B' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* Custom animations for food elements */
+/* Custom texture overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23A39A92' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Custom animations */
 @keyframes simmer {
   0% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0);
   }
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-3px) rotate(0.5deg);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0);
   }
 }
 
 .simmer {
-  animation: simmer 2s infinite ease-in-out;
+  animation: simmer 3s infinite ease-in-out;
 }
 
-/* Hero image overlay */
-.hero-image-overlay {
-  @apply relative;
+/* Hero section styling */
+.hero-section {
+  background: linear-gradient(
+      rgba(253, 245, 230, 0.9),
+      rgba(253, 245, 230, 0.7)
+    ),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E2725B' fill-opacity='0.1'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-.hero-image-overlay::after {
-  content: "";
-  @apply absolute inset-0 bg-primary/10 z-10;
-}
-
-/* It makes the HTML progress bar filling smooth when value change. */
+/* Smooth transitions */
 progress::-webkit-progress-value {
   transition: 0.6s width ease-out;
 }
 
+/* Tailwind components */
 @layer components {
   .btn-gradient {
     @apply bg-gradient-to-r from-primary to-secondary hover:saturate-[1.2] shadow duration-100 border-0 text-white;

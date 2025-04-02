@@ -7,59 +7,61 @@ import { useRef, useState } from "react";
 
 const faqList = [
   {
-    question: "How does the AI know what recipes to suggest?",
+    question: "How does Milio personalize my nutrition guidance?",
     answer: (
       <p>
-        Our AI analyzes your dietary preferences, restrictions, favorite
-        cuisines, and past recipe ratings to create personalized
-        recommendations. The more you use the service, the better it gets at
-        understanding your unique tastes and needs.
+        Milio creates a detailed profile based on your health goals, dietary
+        preferences, lifestyle patterns, and nutritional needs. We use advanced
+        algorithms to analyze this information and provide tailored
+        recommendations that adapt as your goals and needs evolve over time.
       </p>
     ),
   },
   {
-    question: "Can I customize my dietary restrictions?",
+    question: "Can I manage specific dietary needs or restrictions?",
     answer: (
       <p>
-        Absolutely! You can set multiple dietary preferences and restrictions
-        including allergies, intolerances, vegan, vegetarian, keto, paleo,
-        low-carb, gluten-free, and many more. You can also specify ingredients
-        you want to avoid or include.
+        Absolutely! Milio is designed to accommodate a wide range of dietary
+        needs including allergies, intolerances, medical conditions (like
+        diabetes or heart disease), and lifestyle choices (vegan, keto, paleo,
+        etc.). Our system provides nutritionally balanced guidance while
+        respecting your specific requirements.
       </p>
     ),
   },
   {
-    question: "How does the grocery list feature work?",
+    question: "How does the grocery planning feature work?",
     answer: (
       <p>
-        Once you select recipes for your meal plan, our system automatically
-        generates a consolidated grocery list with all required ingredients. It
-        intelligently combines ingredients used across multiple recipes,
-        suggests quantity optimizations, and allows you to check items off as
-        you shop. The list is accessible on any device.
+        Once your meal plan is created, Milio automatically generates a smart
+        shopping list organized by store section for efficient shopping. The
+        system optimizes quantities to reduce waste, suggests seasonal
+        alternatives, and allows you to check items off as you shop. Your list
+        is accessible on any device and can be shared with family members.
       </p>
     ),
   },
   {
-    question: "How much money can I save using this service?",
+    question: "What kind of health improvements can I expect?",
     answer: (
       <p>
-        Our users report saving between $50-$200 per month on groceries by
-        reducing food waste and making more efficient purchases. The exact
-        amount varies based on household size and previous shopping habits, but
-        our waste reduction algorithms typically help users cut grocery expenses
-        by 15-30%.
+        Our users report a range of benefits including better energy levels,
+        improved digestion, weight management, and progress toward specific
+        health goals. The exact benefits vary based on your individual situation
+        and goals, but most users see noticeable improvements within 2-4 weeks
+        of consistent use.
       </p>
     ),
   },
   {
-    question: "Can I add my own recipes to the system?",
+    question: "Can I integrate Milio with my existing health apps or devices?",
     answer: (
       <p>
-        Yes! You can import or manually add your favorite recipes to the system.
-        Our AI will analyze these recipes and incorporate them into your meal
-        suggestions. You can also modify existing recipes to suit your
-        preferences.
+        Yes! Milio is designed to integrate with popular fitness trackers,
+        health apps, and smart devices. This allows for a more holistic view of
+        your health journey and enables our system to make even more
+        personalized recommendations based on your activity levels, sleep
+        patterns, and other health metrics.
       </p>
     ),
   },
@@ -138,7 +140,8 @@ const FAQ = () => {
               Frequently Asked Questions
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              Get answers to common questions about our AI sous chef service
+              Get answers to common questions about our personalized nutrition
+              companion
             </p>
           </div>
           <div className="mx-auto w-full max-w-3xl space-y-4">
@@ -146,7 +149,7 @@ const FAQ = () => {
               <details className="group p-4">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h3 className="font-medium">
-                    How does the AI know what recipes to suggest?
+                    How does Milio personalize my nutrition guidance?
                   </h3>
                   <svg
                     className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -164,11 +167,11 @@ const FAQ = () => {
                   </svg>
                 </summary>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  Our AI analyzes your dietary preferences, restrictions,
-                  favorite cuisines, and past recipe ratings to create
-                  personalized recommendations. The more you use the service,
-                  the better it gets at understanding your unique tastes and
-                  needs.
+                  Milio creates a detailed profile based on your health goals,
+                  dietary preferences, lifestyle patterns, and nutritional
+                  needs. We use advanced algorithms to analyze this information
+                  and provide tailored recommendations that adapt as your goals
+                  and needs evolve over time.
                 </p>
               </details>
             </div>
@@ -176,7 +179,7 @@ const FAQ = () => {
               <details className="group p-4">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h3 className="font-medium">
-                    Can I customize my dietary restrictions?
+                    Can I manage specific dietary needs or restrictions?
                   </h3>
                   <svg
                     className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -194,10 +197,12 @@ const FAQ = () => {
                   </svg>
                 </summary>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  Absolutely! You can set multiple dietary preferences and
-                  restrictions including allergies, intolerances, vegan,
-                  vegetarian, keto, paleo, low-carb, gluten-free, and many more.
-                  You can also specify ingredients you want to avoid or include.
+                  Absolutely! Milio is designed to accommodate a wide range of
+                  dietary needs including allergies, intolerances, medical
+                  conditions (like diabetes or heart disease), and lifestyle
+                  choices (vegan, keto, paleo, etc.). Our system provides
+                  nutritionally balanced guidance while respecting your specific
+                  requirements.
                 </p>
               </details>
             </div>
@@ -205,7 +210,7 @@ const FAQ = () => {
               <details className="group p-4">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h3 className="font-medium">
-                    How does the grocery list feature work?
+                    How does the grocery planning feature work?
                   </h3>
                   <svg
                     className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -223,12 +228,12 @@ const FAQ = () => {
                   </svg>
                 </summary>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  Once you select recipes for your meal plan, our system
-                  automatically generates a consolidated grocery list with all
-                  required ingredients. It intelligently combines ingredients
-                  used across multiple recipes, suggests quantity optimizations,
-                  and allows you to check items off as you shop. The list is
-                  accessible on any device.
+                  Once your meal plan is created, Milio automatically generates
+                  a smart shopping list organized by store section for efficient
+                  shopping. The system optimizes quantities to reduce waste,
+                  suggests seasonal alternatives, and allows you to check items
+                  off as you shop. Your list is accessible on any device and can
+                  be shared with family members.
                 </p>
               </details>
             </div>
@@ -236,7 +241,7 @@ const FAQ = () => {
               <details className="group p-4">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h3 className="font-medium">
-                    How much money can I save using this service?
+                    What kind of health improvements can I expect?
                   </h3>
                   <svg
                     className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -254,11 +259,11 @@ const FAQ = () => {
                   </svg>
                 </summary>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  Our users report saving between $50-$200 per month on
-                  groceries by reducing food waste and making more efficient
-                  purchases. The exact amount varies based on household size and
-                  previous shopping habits, but our waste reduction algorithms
-                  typically help users cut grocery expenses by 15-30%.
+                  Our users report a range of benefits including better energy
+                  levels, improved digestion, weight management, and progress
+                  toward specific health goals. The exact benefits vary based on
+                  your individual situation and goals, but most users see
+                  noticeable improvements within 2-4 weeks of consistent use.
                 </p>
               </details>
             </div>
@@ -266,7 +271,8 @@ const FAQ = () => {
               <details className="group p-4">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                   <h3 className="font-medium">
-                    Can I add my own recipes to the system?
+                    Can I integrate Milio with my existing health apps or
+                    devices?
                   </h3>
                   <svg
                     className="h-5 w-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -284,10 +290,12 @@ const FAQ = () => {
                   </svg>
                 </summary>
                 <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                  Yes! You can import or manually add your favorite recipes to
-                  the system. Our AI will analyze these recipes and incorporate
-                  them into your meal suggestions. You can also modify existing
-                  recipes to suit your preferences.
+                  Yes! Milio is designed to integrate with popular fitness
+                  trackers, health apps, and smart devices. This allows for a
+                  more holistic view of your health journey and enables our
+                  system to make even more personalized recommendations based on
+                  your activity levels, sleep patterns, and other health
+                  metrics.
                 </p>
               </details>
             </div>

@@ -12,9 +12,9 @@ import Image from "next/image";
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "Personalized Recipe Recommendations",
+    title: "Personalized Nutrition Profile",
     description:
-      "Our AI analyzes your dietary preferences, restrictions, and favorite cuisines to suggest recipes that perfectly match your needs. Whether you're gluten-free, vegan, or following a specific diet plan, we've got you covered.",
+      "Milio creates a detailed nutrition profile based on your personal data, preferences, and goals. Our system adapts to your unique physiology, allergies, intolerances, and health objectives to provide truly personalized guidance that evolves with you.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -28,15 +28,60 @@ const features = [
         strokeLinejoin="round"
         className="h-6 w-6"
       >
-        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
-        <line x1="6" x2="18" y1="17" y2="17" />
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
       </svg>
     ),
   },
   {
-    title: "Smart Grocery Lists",
+    title: "Smart Meal Planning",
     description:
-      "Automatically generate comprehensive grocery lists based on your selected recipes. Our intelligent system combines ingredients across recipes, suggests optimized quantities, and lets you check items off as you shop.",
+      "Our intelligent system generates meal plans tailored to your nutrition profile, dietary preferences, and lifestyle. Easily adjust plans based on your schedule, budget, and available ingredients, while our system optimizes for nutritional balance and variety.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+        <line x1="16" y1="2" x2="16" y2="6" />
+        <line x1="8" y1="2" x2="8" y2="6" />
+        <line x1="3" y1="10" x2="21" y2="10" />
+      </svg>
+    ),
+  },
+  {
+    title: "Intuitive Lifestyle Integration",
+    description:
+      "Milio seamlessly integrates with your daily routine, adjusting recommendations based on your activity levels, sleep patterns, and even stress levels. Whether you're meal prepping for a busy week or planning for special occasions, Milio adapts to your life, not the other way around.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Effortless Grocery Management",
+    description:
+      "Transform your meal plan into a smart shopping list that's organized by store layout and prioritized for freshness. Reduce waste and save money with accurate portion planning and ingredient substitution suggestions based on what's in season or on sale.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +102,9 @@ const features = [
     ),
   },
   {
-    title: "Waste Reduction Planning",
+    title: "Progress Tracking & Insights",
     description:
-      "Our AI creates meal plans that cleverly use ingredients across multiple recipes, minimizing leftovers and reducing food waste. Save money and help the environment by buying only what you'll actually use.",
+      "Gain valuable insights into your nutrition habits and health metrics through intuitive visualizations. Track your progress toward personalized goals, receive gentle nudges for improvement, and celebrate your achievements with data-driven feedback that keeps you motivated.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -73,54 +118,8 @@ const features = [
         strokeLinejoin="round"
         className="h-6 w-6"
       >
-        <path d="M12 3v19" />
-        <path d="M5 8h14" />
-        <path d="M15 5h-3v3h-3v3h3v3h3v-3h3V8h-3z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Budget-Friendly Options",
-    description:
-      "Set your grocery budget and let our AI suggest recipes that maximize flavor while minimizing cost. Track your spending and see how much you're saving compared to your previous grocery habits.",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <path d="M16 8h-6.5a2.5 2.5 0 0 0 0 5h3a2.5 2.5 0 0 1 0 5H6" />
-        <path d="M12 18v2" />
-        <path d="M12 4v2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Culinary Inspiration",
-    description:
-      "Never get stuck in a recipe rut again. Our AI suggests new recipes to try based on your taste profile, helping you explore new cuisines and cooking techniques. Make cooking exciting again!",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6"
-      >
-        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+        <path d="M3 3v18h18" />
+        <path d="m19 9-5 5-4-4-3 3" />
       </svg>
     ),
   },
@@ -177,17 +176,23 @@ const FeaturesAccordion = () => {
 
   return (
     <section
-      className="py-24 md:py-32 space-y-24 md:space-y-32 max-w-7xl mx-auto bg-base-100 "
+      className="py-12 md:py-24 lg:py-32 space-y-24 md:space-y-32 max-w-7xl mx-auto"
       id="features"
     >
       <div className="px-8">
-        <h2 className="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24">
-          All you need to cook smarter
-          <span className="bg-neutral text-neutral-content px-2 md:px-4 ml-1 md:ml-1.5 leading-relaxed whitespace-nowrap">
-            and eat better
-          </span>
-        </h2>
-        <div className=" flex flex-col md:flex-row gap-12 md:gap-24">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+            Your personal guide to{" "}
+            <span className="text-primary">better nutrition</span>
+            <br />
+            and <span className="text-primary">healthier living</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground md:text-xl max-w-2xl mx-auto">
+            Intuitive tools that make nutritional decisions effortless and
+            personalized to your unique needs
+          </p>
+        </div>
+        <div className="flex flex-col md:flex-row gap-12 md:gap-24">
           <div className="grid grid-cols-1 items-stretch gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-20">
             <ul className="w-full">
               {features.map((feature, index) => (

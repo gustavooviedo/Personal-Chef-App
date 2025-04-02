@@ -1,3 +1,5 @@
+"use client";
+
 const Arrow = ({ extraStyle }) => {
   return (
     <svg
@@ -40,122 +42,168 @@ const Step = ({ emoji, text }) => {
 // - Problem Agitation: "Developers spend too much time adding features, get overwhelmed, and quit." (not about ShipFast at all)
 // - Features: "ShipFast has user auth, Stripe, emails all set up for you"
 export default function Problem() {
+  // Custom colors for Terracotta-inspired palette
+  const colors = {
+    primary: "#E2725B", // Terracotta
+    ivory: "#FDF5E6",
+    warmGray: "#A39A92",
+    oliveGreen: "#738678",
+    softCream: "#F7E7CE",
+  };
+
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
-              The Struggles of Modern Meal Planning
-            </h2>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-              We've all been there...
-            </p>
-          </div>
-          <div className="mx-auto grid max-w-5xl gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-primary"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold">Wasted Time</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Hours spent searching for recipes, planning meals, and making
-                shopping lists every week.
+    <>
+      <style jsx global>{`
+        .problem-section {
+          background-color: var(--color-soft-cream);
+        }
+        .problem-card {
+          background-color: var(--color-ivory);
+          border-color: var(--color-warm-gray);
+          transition: all 0.3s ease;
+        }
+        .problem-card:hover {
+          border-color: var(--color-primary);
+          transform: translateY(-5px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .icon-container {
+          background-color: var(--color-primary);
+          opacity: 0.1;
+        }
+        .icon-container svg {
+          color: var(--color-primary);
+        }
+      `}</style>
+
+      <section className="w-full py-12 md:py-24 lg:py-32 problem-section">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-serif font-bold tracking-tighter md:text-4xl terracotta-text">
+                Why Nutrition Management Is Overwhelming
+              </h2>
+              <p className="mx-auto max-w-[700px] warm-gray-text md:text-xl">
+                Even health-conscious individuals face these everyday
+                challenges...
               </p>
             </div>
-            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-primary"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
+            <div className="mx-auto grid max-w-5xl gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4 mt-8">
+              <div className="flex flex-col items-center space-y-3 rounded-xl problem-card p-6 shadow-sm border">
+                <div className="p-3 icon-container rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-6 w-6"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium terracotta-text">
+                  Information Overload
+                </h3>
+                <p className="text-sm warm-gray-text text-center">
+                  Endless contradictory nutrition advice makes it impossible to
+                  know what's actually best for your unique needs.
+                </p>
               </div>
-              <h3 className="text-xl font-bold">Food Waste</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Buying ingredients that go unused and end up in the trash,
-                costing you money and harming the environment.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-primary"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
+              <div className="flex flex-col items-center space-y-3 rounded-xl problem-card p-6 shadow-sm border">
+                <div className="p-3 icon-container rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-6 w-6"
+                  >
+                    <path d="M3 6h18" />
+                    <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+                    <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+                    <line x1="10" y1="11" x2="10" y2="17" />
+                    <line x1="14" y1="11" x2="14" y2="17" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium terracotta-text">
+                  Costly Conveniences
+                </h3>
+                <p className="text-sm warm-gray-text text-center">
+                  Relying on takeout and pre-packaged meals that strain your
+                  budget while compromising your health goals.
+                </p>
               </div>
-              <h3 className="text-xl font-bold">Cooking Fatigue</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                The same boring recipes week after week, making cooking feel
-                like a chore rather than a joy.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-2 border p-4 rounded-lg md:col-span-2 lg:col-span-1">
-              <div className="p-2 bg-primary/10 rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-6 w-6 text-primary"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
+              <div className="flex flex-col items-center space-y-3 rounded-xl problem-card p-6 shadow-sm border">
+                <div className="p-3 icon-container rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-6 w-6"
+                  >
+                    <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium terracotta-text">
+                  Lifestyle Disconnect
+                </h3>
+                <p className="text-sm warm-gray-text text-center">
+                  Generic nutrition plans that don't account for your schedule,
+                  preferences, or how your body uniquely responds to different
+                  foods.
+                </p>
               </div>
-              <h3 className="text-xl font-bold">Dietary Complications</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Struggling to find recipes that match your dietary restrictions
-                or health goals while still tasting great.
-              </p>
+              <div className="flex flex-col items-center space-y-3 rounded-xl problem-card p-6 shadow-sm border">
+                <div className="p-3 icon-container rounded-full">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-6 w-6"
+                  >
+                    <path d="M16 6.1c-.14-.42-.36-.8-.67-1.1A3.76 3.76 0 0 0 12 4a3.76 3.76 0 0 0-3.33 1c-.31.3-.53.68-.67 1.1C7.85 6.4 8 6.81 8 7.2v1.1c0 1.29 1.14 2.33 2.56 2.63.52.1 1.08.1 1.6 0C13.71 10.63 15 9.58 15 8.3V7.2c0-.4.15-.8 0-1.1z" />
+                    <path d="M9.5 10.5v1a2.5 2.5 0 0 0 5 0v-1" />
+                    <path d="M12 17c.74 0 1.47-.12 2.17-.34.93-.3 1.83-.8 2.83-1.66v0c.47-.4 1-.6 1.6-.6.69 0 1.38.2 2 .59a5.89 5.89 0 0 1 2.4 4.01V20" />
+                    <path d="M12 17c-.74 0-1.47-.12-2.17-.34-.93-.3-1.83-.8-2.83-1.66v0c-.47-.4-1-.6-1.6-.6-.7 0-1.39.2-2 .59A5.89 5.89 0 0 0 1 19v1" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-medium terracotta-text">
+                  Unsustainable Results
+                </h3>
+                <p className="text-sm warm-gray-text text-center">
+                  Short-term diet fixes that lead to frustrating cycles of
+                  progress and regression instead of lasting lifestyle changes.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

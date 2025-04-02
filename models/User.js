@@ -36,6 +36,11 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    // Used to identify admin users who can access the admin dashboard
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,

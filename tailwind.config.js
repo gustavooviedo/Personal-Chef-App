@@ -57,8 +57,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        heading: ["var(--font-heading)", "Georgia", "serif"],
+        sans: ["'Source Sans 3'", "ui-sans-serif", "system-ui", "sans-serif"],
+        serif: ["'Playfair Display'", "ui-serif", "Georgia", "serif"],
+        mono: ["ui-monospace", "monospace"],
       },
       keyframes: {
         "accordion-down": {
@@ -83,10 +84,9 @@ module.exports = {
         "food-pattern": "url('/patterns/food-pattern.svg')",
         gradient:
           "linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)))",
+        "kitchen-texture": "url('/patterns/kitchen-texture.svg')",
       },
     },
   },
-  plugins: [
-    // Remove tailwindcss-animate plugin to remove dependency
-  ],
+  plugins: [],
 };

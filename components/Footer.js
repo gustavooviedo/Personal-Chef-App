@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
@@ -12,7 +14,7 @@ const Footer = () => {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:gap-16">
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">ChefMate AI</h4>
+            <h4 className="text-lg font-semibold">Milio AI</h4>
             <p className="max-w-[200px] text-sm text-gray-500 dark:text-gray-400">
               Your AI sous chef for smarter meal planning and grocery shopping
             </p>
@@ -174,7 +176,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-10 border-t pt-6 text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>© 2023 ChefMate AI. All rights reserved.</p>
+          <p>© 2023 Milio AI. All rights reserved.</p>
           <p className="mt-2">Made with love for home cooks everywhere.</p>
         </div>
       </div>

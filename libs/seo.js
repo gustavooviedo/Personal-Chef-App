@@ -84,11 +84,11 @@ export const renderSchemaTags = () => {
           image: `https://${config.domainName}/icon.png`,
           url: `https://${config.domainName}/`,
           author: {
-            "@type": "Person",
-            name: "Marc Lou",
+            "@type": "Organization",
+            name: "Milio AI",
           },
           datePublished: "2023-08-01",
-          applicationCategory: "EducationalApplication",
+          applicationCategory: "LifestyleApplication",
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "4.8",
